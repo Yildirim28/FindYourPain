@@ -83,6 +83,7 @@ const routineData = [
 const inputField = document.getElementById('course-input');
 const searchBtn = document.getElementById('search-btn');
 const resultsContainer = document.getElementById('results-container');
+const suggestionsBox = document.getElementById('search-suggestions');
 
 // Normalize string for robust searching: remove non-alphanumeric and make lowercase
 const normalize = (str) => {
@@ -91,15 +92,44 @@ const normalize = (str) => {
 
 const handleSearch = () => {
     const query = inputField.value.trim();
-    if (!query || query.length < 2) {
-        resultsContainer.innerHTML = '<div class="no-results">Please enter at least 2 characters to search.</div>';
+    if (!query) {
+        resultsContainer.innerHTML = '<div class="no-results">Please enter at least one course code to search.</div>';
         return;
     }
 
-    const normalizedQuery = normalize(query);
-    const results = routineData.filter(item => normalize(item.course).includes(normalizedQuery));
+    // Split by comma and filter valid search terms
+    const parts = query.split(',').map(p => p.trim()).filter(p => p.length >= 2);
+    if (parts.length === 0) {
+        resultsContainer.innerHTML = '<div class="no-results">Please enter at least 2 characters for a course code.</div>';
+        return;
+    }
 
-    displayResults(results);
+    let allResults = [];
+    parts.forEach(part => {
+        const normalizedQuery = normalize(part);
+        const matches = routineData.filter(item => normalize(item.course).includes(normalizedQuery));
+        allResults = allResults.concat(matches);
+    });
+
+    // Deduplicate results based on day, period, course
+    const seen = new Set();
+    const uniqueResults = allResults.filter(item => {
+        const key = `${item.day}-${item.period}-${item.course}`;
+        if (seen.has(key)) {
+            return false;
+        }
+        seen.add(key);
+        return true;
+    });
+
+    // Sort uniqueResults by day, then period
+    uniqueResults.sort((a, b) => {
+        if (a.day !== b.day) return a.day - b.day;
+        return a.period.localeCompare(b.period);
+    });
+
+    displayResults(uniqueResults);
+    suggestionsBox.classList.add('hidden');
 };
 
 const displayResults = (results) => {
@@ -141,6 +171,42 @@ inputField.addEventListener('keypress', (e) => {
     }
 });
 
+// Suggestions logic as user types
+inputField.addEventListener('input', () => {
+    const value = inputField.value;
+    const parts = value.split(',');
+    const lastPart = parts[parts.length - 1].trim();
+
+    if (lastPart.length < 2) {
+        suggestionsBox.classList.add('hidden');
+        return;
+    }
+
+    const normalizedLast = normalize(lastPart);
+    const uniqueCourses = [...new Set(routineData.map(item => item.course))];
+    const matches = uniqueCourses.filter(course => normalize(course).includes(normalizedLast)).slice(0, 5);
+
+    if (matches.length === 0) {
+        suggestionsBox.classList.add('hidden');
+        return;
+    }
+
+    suggestionsBox.innerHTML = '';
+    matches.forEach(match => {
+        const div = document.createElement('div');
+        div.className = 'suggestion-item';
+        div.textContent = match;
+        div.addEventListener('click', () => {
+            parts[parts.length - 1] = ' ' + match;
+            inputField.value = parts.join(',').trim() + ', ';
+            inputField.focus();
+            suggestionsBox.classList.add('hidden');
+        });
+        suggestionsBox.appendChild(div);
+    });
+    suggestionsBox.classList.remove('hidden');
+});
+
 // Modal Logic
 const modal = document.getElementById('courses-modal');
 const btn = document.getElementById('all-courses-btn');
@@ -164,6 +230,9 @@ window.addEventListener('click', (event) => {
     }
     if (typeof contactModal !== 'undefined' && event.target === contactModal) {
         contactModal.classList.add('hidden');
+    }
+    if (event.target !== inputField && event.target !== suggestionsBox) {
+        suggestionsBox.classList.add('hidden');
     }
 });
 
