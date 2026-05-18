@@ -343,6 +343,127 @@ header {
     animation: slideUpFade 0.5s forwards ease-out;
 }
 
+/* Alert Banners */
+.alert {
+    width: 100%;
+    padding: 1rem 1.4rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    animation: slideUpFade 0.4s forwards ease-out;
+    opacity: 0;
+}
+
+.alert strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.alert ul li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.alert-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.alert-error {
+    background: rgba(255, 50, 80, 0.12);
+    border: 1px solid rgba(255, 50, 80, 0.4);
+    color: #ff8099;
+}
+
+.alert-error strong {
+    color: #ff4060;
+}
+
+.alert-warning {
+    background: rgba(255, 180, 0, 0.1);
+    border: 1px solid rgba(255, 180, 0, 0.35);
+    color: #ffd060;
+}
+
+.alert-warning strong {
+    color: #ffb400;
+}
+
+/* Card conflict / warning highlights */
+.result-card.card-conflict::before {
+    background: #ff4060;
+    box-shadow: 0 0 10px #ff4060;
+}
+
+.result-card.card-warning::before {
+    background: #ffb400;
+    box-shadow: 0 0 10px #ffb400;
+}
+
+/* Course code badge */
+.course-code-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-glow);
+    background: rgba(0, 255, 204, 0.08);
+    border: 1px solid rgba(0, 255, 204, 0.25);
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+}
+
+.result-card.day-even .course-code-badge {
+    color: var(--accent-glow-secondary);
+    background: rgba(255, 0, 127, 0.08);
+    border-color: rgba(255, 0, 127, 0.25);
+}
+
+/* Prerequisite info in card */
+.prereq-info {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 0.2rem;
+}
+
+/* Suggestions: code + title layout */
+.suggestion-code {
+    font-weight: 700;
+    color: var(--accent-glow);
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.suggestion-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* All-courses modal: code + title layout */
+.course-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.course-list-title {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
 
 /* Navigation and Buttons */
 .top-nav {
