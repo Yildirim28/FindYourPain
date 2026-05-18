@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindYourPain - Exam Routine</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav class="top-nav">
+        <div class="top-left-title">UIU Tentative Exam Routine</div>
+        <button id="all-courses-btn" class="glass-btn">All Courses</button>
+    </nav>
+
+    <div id="courses-modal" class="modal glass-panel hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2>All Courses</h2>
+            <div id="all-courses-list" class="courses-list"></div>
+        </div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1 class="glitch" data-text="FIND YOUR PAIN">FIND YOUR PAIN</h1>
+            <p class="subtitle">Discover Your Exam Destiny</p>
+        </header>
+
+        <div class="search-box glass-panel">
+            <input type="text" id="course-input" placeholder="Enter Course Code (e.g. CSE 313)" autocomplete="off">
+            <button id="search-btn">
+                <span>Locate</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+
+        <div id="results-container" class="results-container">
+            <!-- Results will be injected here -->
+        </div>
+    </main>
+
+    <div id="contact-modal" class="modal glass-panel hidden">
+        <div class="modal-content contact-content">
+            <span id="close-contact-modal" class="close-btn">&times;</span>
+            <h2>Contact</h2>
+            <div class="contact-details">
+                <p><strong>Name:</strong> Md. Shamim Osman Chowdhury (Akash)</p>
+                <p><strong>Email:</strong> <a href="mailto:shamimosman346@gmail.com">shamimosman346@gmail.com</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/8801639815290" target="_blank">01639815290</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <button id="contact-btn" class="glass-btn">Contact</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
