@@ -267,3 +267,37 @@ if (closeContactSpan) {
         contactModal.classList.add('hidden');
     });
 }
+
+// Refresh & Wave Logic
+const refreshBtn = document.getElementById('refresh-btn');
+const waveContainer = document.getElementById('wave-container');
+
+if (refreshBtn) {
+    refreshBtn.addEventListener('click', (e) => {
+        inputField.value = '';
+        resultsContainer.innerHTML = '';
+        suggestionsBox.classList.add('hidden');
+
+        // Rotate Icon
+        refreshBtn.classList.add('refresh-btn-clicked');
+        setTimeout(() => {
+            refreshBtn.classList.remove('refresh-btn-clicked');
+        }, 800);
+
+        // Wave animation origin
+        const rect = refreshBtn.getBoundingClientRect();
+        const x = e.clientX || (rect.left + rect.width / 2);
+        const y = e.clientY || (rect.top + rect.height / 2);
+
+        const wave = document.createElement('div');
+        wave.className = 'wave';
+        wave.style.left = `${x}px`;
+        wave.style.top = `${y}px`;
+
+        waveContainer.appendChild(wave);
+
+        setTimeout(() => {
+            wave.remove();
+        }, 1400);
+    });
+}
