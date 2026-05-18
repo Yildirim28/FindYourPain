@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="background-animation">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
     </div>
-    
+
     <div id="wave-container"></div>
 
     <nav class="top-nav">
         <div class="top-left-title">UIU Tentative Exam Routine</div>
         <div class="top-nav-buttons">
             <button id="refresh-btn" class="glass-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="refresh-icon"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" class="refresh-icon">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                </svg>
                 <span>Refresh</span>
             </button>
             <button id="all-courses-btn" class="glass-btn">All Courses</button>
@@ -43,10 +48,15 @@
 
         <div class="search-container">
             <div class="search-box glass-panel">
-                <input type="text" id="course-input" placeholder="Enter Course Codes (e.g. CSE 313, CSE 4509)" autocomplete="off">
+                <input type="text" id="course-input" placeholder="Enter Course Codes (e.g. CSE 313, CSE 4509)"
+                    autocomplete="off">
                 <button id="search-btn">
                     <span>Locate</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                 </button>
             </div>
             <div id="search-suggestions" class="suggestions-box glass-panel hidden"></div>
@@ -73,6 +83,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module" />
 </body>
+
 </html>

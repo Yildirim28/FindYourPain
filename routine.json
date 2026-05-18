@@ -1,0 +1,959 @@
+[
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ENG 1011",
+    "title": "English I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "BDS 1201",
+    "title": "History of the Emergence of Bangladesh",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 2,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "MATH 1151",
+    "title": "Fundamental Calculus",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "ENG 1013",
+    "title": "English II",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "ENG 1011"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 1111",
+    "title": "Structured Programming Language",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 1110"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 2213",
+    "title": "Discrete Mathematics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "02:00 PM - 04:00 PM",
+    "code": "MATH 2183",
+    "title": "Calculus and Linear Algebra",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T3",
+    "time": "02:00 PM - 04:00 PM",
+    "code": "PHY 2105",
+    "title": "Physics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 2215",
+    "title": "Data Structure and Algorithms I",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 1111",
+      "DS 1115",
+      "DS 1116"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 2201",
+    "title": "Coordinate Geometry and Vector",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 1325",
+    "title": "Digital Logic Design",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 1115",
+    "title": "Object Oriented Programming",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2215"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 2,
+    "period": "T3",
+    "time": "",
+    "code": "MATH 2205",
+    "title": "Probability and Statistics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "SOC 2101",
+    "title": "Society, Technology and Engineering",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 2217",
+    "title": "Data Structure and Algorithms II",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2215",
+      "CSE 2216"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T3",
+    "time": "",
+    "code": "EEE 2113",
+    "title": "Electrical Circuits",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 2,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 3521",
+    "title": "Database Management Systems",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2215"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T3",
+    "time": "",
+    "code": "EEE 2123",
+    "title": "Electronics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "EEE 2113"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4165",
+    "title": "Web Programming",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 1115",
+      "CSE 1116"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 3313",
+    "title": "Computer Architecture",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 1325"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T3",
+    "time": "",
+    "code": "BIO 3105",
+    "title": "Biology for Engineers",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 3411",
+    "title": "System Analysis and Design",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3521"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 2,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 4325",
+    "title": "Microprocessors and",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3313"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 3421",
+    "title": "Software Engineering",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3411"
+    ],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 3811",
+    "title": "Artificial Intelligence",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 2205",
+      "CSE 2217"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 2233",
+    "title": "Theory of Computation",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "PMG 4101",
+    "title": "Project Management",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3411"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 3711",
+    "title": "Computer Networks",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2217"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4509",
+    "title": "Operating Systems",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2217",
+      "CSE 3313"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4531",
+    "title": "Computer Security",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3711",
+      "CSE 4509"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4261",
+    "title": "Green Computing",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ECO 4101",
+    "title": "Economics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 2,
+    "period": "T3",
+    "time": "",
+    "code": "ACT 2111",
+    "title": "Financial and Managerial Accounting",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "IPE 3401",
+    "title": "Industrial and Operational Management",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE",
+      "BSDS"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4611",
+    "title": "Compiler Design",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2233"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 2,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4621",
+    "title": "Computer Graphics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 2201",
+      "MATH 2183"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 4783",
+    "title": "Cryptography",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4531"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4777",
+    "title": "Network Security",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4531"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4889",
+    "title": "Machine Learning",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3811",
+      "CSE 3812",
+      "MATH 2183"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4817",
+    "title": "Big Data Analytics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4889"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4893",
+    "title": "Introduction to Bioinformatics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4889"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4883",
+    "title": "Digital Image Processing",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4889"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4451",
+    "title": "Human Computer Interaction",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 4435",
+    "title": "Software Architecture",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4181",
+    "title": "Mobile Application Development",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4165"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T3",
+    "time": "",
+    "code": "CSE 4495",
+    "title": "Software Testing and Quality",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3421"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 4379",
+    "title": "Real-time Embedded Systems",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 4325"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "CSE 4945",
+    "title": "UI: Concepts and Design",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "DS 1501",
+    "title": "Programming for Data Science",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "DS 1115",
+    "title": "Object Oriented Programming for Data Science",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 1501",
+      "DS 1502"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "DS 1101",
+    "title": "Fundamentals of Data Science",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 1115",
+      "DS 1116"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T3",
+    "time": "",
+    "code": "BIO 3107",
+    "title": "Biology",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "MATH 2107",
+    "title": "Linear Algebra",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 1153",
+    "title": "Advanced Calculus",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "SOC 2102",
+    "title": "Society, Environment and Computing Ethics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "TEC 2499",
+    "title": "Technology Entrepreneurship",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "DS 3885",
+    "title": "Data Wrangling",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 1101"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T3",
+    "time": "",
+    "code": "DS 3101",
+    "title": "Advanced Probability and Statistics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 2205",
+      "MATH 2107"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 6,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "DS 3521",
+    "title": "Data Visualization",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 3885"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "DS 4889",
+    "title": "Machine Learning",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 1151",
+      "MATH 2107",
+      "MATH 2205"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T3",
+    "time": "",
+    "code": "DS 4523",
+    "title": "Simulation and Modeling",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "MATH 2107",
+      "MATH 2205"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "DS 4891",
+    "title": "Data Analytics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 3885"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "DS 4429",
+    "title": "Machine Learning Systems Design",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 4889"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 4,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "DS 2251",
+    "title": "Bayesian Statistics",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 1101",
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 5,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4511",
+    "title": "Operating Systems and Scripting",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 2217"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T3",
+    "time": "",
+    "code": "DS 3881",
+    "title": "Regression and Multivariate Analysis",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 1101",
+      "MATH 1151"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T3",
+    "time": "",
+    "code": "DS 4211",
+    "title": "Deep Learning",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "DS 4889"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 7,
+    "period": "T2",
+    "time": "11:30 AM - 01:30 PM",
+    "code": "DS 4229",
+    "title": "Data Warehousing",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "CSE 3521"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 3,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "DS 4123",
+    "title": "Human Computer Interaction",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "Minimum Completed Credit 70"
+    ],
+    "offeredin": [
+      "BSDS"
+    ]
+  }
+]
