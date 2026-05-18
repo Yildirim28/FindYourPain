@@ -423,6 +423,17 @@ const generateRoutineImage = async (results) => {
     }
     table.appendChild(tbody);
     wrapper.appendChild(table);
+
+    // Add website signature
+    const signature = document.createElement('div');
+    signature.style.marginTop = '1.5rem';
+    signature.style.textAlign = 'center';
+    signature.style.fontSize = '0.85rem';
+    signature.style.color = 'rgba(255, 255, 255, 0.6)';
+    signature.style.letterSpacing = '1px';
+    signature.innerHTML = '<strong>Find Your Pain</strong>, created by Yildirim';
+    wrapper.appendChild(signature);
+
     exportContainer.appendChild(wrapper);
 
     // Render with html2canvas
