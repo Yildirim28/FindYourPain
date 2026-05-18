@@ -877,3 +877,74 @@ header {
     color: var(--accent-glow-secondary);
     transform: scale(1.2) rotate(90deg);
 }
+
+/* Routine Export Table Styles */
+.routine-table-wrapper {
+    background: #0f172a;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 12px;
+    width: 1000px;
+}
+.routine-export-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #00ffcc;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+.routine-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+}
+.routine-table th, .routine-table td {
+    border: 1px solid rgba(0, 255, 204, 0.2);
+    padding: 1rem;
+    text-align: center;
+}
+.routine-table th {
+    background: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.routine-table td {
+    font-size: 1rem;
+}
+.routine-table .day-col {
+    font-weight: 700;
+    color: #00ffcc;
+    background: rgba(0, 255, 204, 0.05);
+}
+.course-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.course-cell-code {
+    font-weight: 800;
+    color: #fff;
+}
+.course-cell-title {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Download Button Styles */
+.download-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+.download-routine-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

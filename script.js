@@ -148,12 +148,34 @@ const displayResults = (results, conflictGroups, sameDayGroups, prereqConflicts)
             ? `<div class="prereq-info">Prerequisites: ${item.prerequisite.join(', ')}</div>`
             : '';
 
+        let localWarningsHTML = '';
+        
+        const itemPrereqs = prereqConflicts.filter(c => c.course.code === item.code || c.prereq === item.code);
+        if (itemPrereqs.length > 0) {
+            itemPrereqs.forEach(c => {
+                localWarningsHTML += `<div class="card-inline-alert card-alert-error"><span class="alert-icon">✕</span> Prerequisite Conflict: ${c.course.code} requires ${c.prereq}</div>`;
+            });
+        }
+        
+        const itemTimeslotConf = conflictGroups.find(g => g.some(c => c.code === item.code));
+        if (itemTimeslotConf) {
+            const others = itemTimeslotConf.filter(c => c.code !== item.code).map(c => c.code).join(' & ');
+            localWarningsHTML += `<div class="card-inline-alert card-alert-error"><span class="alert-icon">✕</span> Time Slot Conflict with ${others}</div>`;
+        }
+
+        const itemSameDayConf = sameDayGroups.find(g => g.some(c => c.code === item.code));
+        if (itemSameDayConf && !itemTimeslotConf) {
+            const others = itemSameDayConf.filter(c => c.code !== item.code).map(c => c.code).join(', ');
+            localWarningsHTML += `<div class="card-inline-alert card-alert-warning"><span class="alert-icon">⚠</span> Same Day Exam as ${others}</div>`;
+        }
+
         card.innerHTML = `
             <button class="remove-course-btn" aria-label="Remove Course" title="Remove course">✕</button>
             <div class="result-info">
                 <div class="course-code-badge">${item.code}</div>
                 <h3 class="course-title">${item.title}</h3>
                 ${prereqList}
+                ${localWarningsHTML ? `<div class="card-alerts-container">${localWarningsHTML}</div>` : ''}
             </div>
             <div class="time-info">
                 <div class="day-badge">Day ${item.day}</div>
@@ -179,6 +201,20 @@ const displayResults = (results, conflictGroups, sameDayGroups, prereqConflicts)
 
         resultsContainer.appendChild(card);
     });
+
+    if (results.length > 0) {
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'download-btn-container';
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'glass-btn download-routine-btn';
+        downloadBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Routine (PNG)
+        `;
+        downloadBtn.addEventListener('click', () => generateRoutineImage(results));
+        btnContainer.appendChild(downloadBtn);
+        resultsContainer.appendChild(btnContainer);
+    }
 };
 
 searchBtn.addEventListener('click', handleSearch);
@@ -322,3 +358,97 @@ if (refreshBtn) {
         setTimeout(() => wave.remove(), 1400);
     });
 }
+
+// Routine Image Export Logic
+const generateRoutineImage = async (results) => {
+    const exportContainer = document.getElementById('export-container');
+    exportContainer.innerHTML = '';
+
+    // Create wrapper
+    const wrapper = document.createElement('div');
+    wrapper.className = 'routine-table-wrapper';
+    
+    const title = document.createElement('h2');
+    title.className = 'routine-export-title';
+    title.textContent = 'MY EXAM ROUTINE';
+    wrapper.appendChild(title);
+
+    // Prepare table data
+    const maxDays = Math.max(...results.map(r => r.day));
+    const periods = ['T1', 'T2', 'T3', 'T4', 'T5']; // Assuming 5 slots max
+    
+    // Find active periods to avoid empty columns
+    const activePeriods = periods.filter(p => results.some(r => r.period === p));
+
+    const table = document.createElement('table');
+    table.className = 'routine-table';
+
+    // Header
+    const thead = document.createElement('thead');
+    let headerRow = '<tr><th>Day</th>';
+    activePeriods.forEach(p => {
+        const timeObj = results.find(r => r.period === p);
+        const timeStr = timeObj ? timeObj.time : '';
+        headerRow += `<th>Slot ${p}<br><span style="font-size:0.8rem;opacity:0.7">${timeStr}</span></th>`;
+    });
+    headerRow += '</tr>';
+    thead.innerHTML = headerRow;
+    table.appendChild(thead);
+
+    // Body
+    const tbody = document.createElement('tbody');
+    for (let day = 1; day <= maxDays; day++) {
+        const dayExams = results.filter(r => r.day === day);
+        if (dayExams.length === 0) continue; // Skip empty days
+
+        const tr = document.createElement('tr');
+        let rowHTML = `<td class="day-col">Day ${day}</td>`;
+        
+        activePeriods.forEach(p => {
+            const examsInSlot = dayExams.filter(r => r.period === p);
+            if (examsInSlot.length > 0) {
+                const cellContent = examsInSlot.map(exam => `
+                    <div class="course-cell">
+                        <span class="course-cell-code">${exam.code}</span>
+                        <span class="course-cell-title">${exam.title}</span>
+                    </div>
+                `).join('<hr style="border:0;border-top:1px solid rgba(0,255,204,0.3);margin:0.5rem 0;">');
+                rowHTML += `<td>${cellContent}</td>`;
+            } else {
+                rowHTML += `<td>-</td>`;
+            }
+        });
+        tr.innerHTML = rowHTML;
+        tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    wrapper.appendChild(table);
+    exportContainer.appendChild(wrapper);
+
+    // Render with html2canvas
+    if (typeof html2canvas !== 'undefined') {
+        try {
+            const canvas = await html2canvas(wrapper, {
+                backgroundColor: null,
+                scale: 2 // High resolution
+            });
+            const imgData = canvas.toDataURL('image/png');
+            
+            // Trigger download
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'exam_routine.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (err) {
+            console.error('Error generating image:', err);
+            alert('Failed to generate image. Please try again.');
+        }
+    } else {
+        alert('html2canvas library is not loaded.');
+    }
+    
+    // Clean up
+    exportContainer.innerHTML = '';
+};
