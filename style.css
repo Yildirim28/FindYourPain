@@ -532,6 +532,8 @@ header {
 @media (max-width: 600px) {
     body {
         padding-top: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container {
@@ -540,6 +542,7 @@ header {
 
     .top-nav {
         position: relative;
+        width: 100%;
         flex-direction: column;
         gap: 0.8rem;
         padding: 1rem;
