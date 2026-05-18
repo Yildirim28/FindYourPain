@@ -233,11 +233,20 @@ window.addEventListener('click', (event) => {
 
 const renderAllCourses = () => {
     allCoursesList.innerHTML = '';
-    const sorted = [...routineData].sort((a, b) => a.code.localeCompare(b.code));
+    
+    const uniqueMap = new Map();
+    routineData.forEach(item => {
+        if (!uniqueMap.has(item.code)) {
+            uniqueMap.set(item.code, item);
+        }
+    });
+    
+    const sorted = Array.from(uniqueMap.values()).sort((a, b) => a.code.localeCompare(b.code));
+    
     sorted.forEach((item, index) => {
         const courseEl = document.createElement('div');
         courseEl.className = 'course-list-item';
-        courseEl.innerHTML = `<span class="course-code-badge">${item.code}</span><span class="course-list-title">${item.title}</span>`;
+        courseEl.innerHTML = `<span class="course-code-badge">${item.code}</span> <span class="course-list-title">${item.title}</span>`;
         courseEl.style.animationDelay = `${(index % 10) * 0.05}s`;
         courseEl.style.cursor = 'pointer';
         
@@ -245,12 +254,12 @@ const renderAllCourses = () => {
             const currentValue = inputField.value.trim();
             if (currentValue) {
                 const parts = currentValue.split(',').map(p => p.trim()).filter(p => p.length > 0);
-                if (!parts.includes(course)) {
-                    parts.push(course);
+                if (!parts.includes(item.code)) {
+                    parts.push(item.code);
                     inputField.value = parts.join(', ') + ', ';
                 }
             } else {
-                inputField.value = course + ', ';
+                inputField.value = item.code + ', ';
             }
             handleSearch();
             modal.classList.add('hidden');
