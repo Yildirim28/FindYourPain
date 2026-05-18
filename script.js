@@ -239,6 +239,23 @@ const renderAllCourses = () => {
         courseEl.className = 'course-list-item';
         courseEl.innerHTML = `<span class="course-code-badge">${item.code}</span><span class="course-list-title">${item.title}</span>`;
         courseEl.style.animationDelay = `${(index % 10) * 0.05}s`;
+        courseEl.style.cursor = 'pointer';
+        
+        courseEl.addEventListener('click', () => {
+            const currentValue = inputField.value.trim();
+            if (currentValue) {
+                const parts = currentValue.split(',').map(p => p.trim()).filter(p => p.length > 0);
+                if (!parts.includes(course)) {
+                    parts.push(course);
+                    inputField.value = parts.join(', ') + ', ';
+                }
+            } else {
+                inputField.value = course + ', ';
+            }
+            handleSearch();
+            modal.classList.add('hidden');
+        });
+        
         allCoursesList.appendChild(courseEl);
     });
 };

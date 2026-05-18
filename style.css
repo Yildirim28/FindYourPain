@@ -567,11 +567,14 @@ header {
 }
 
 .courses-list {
+    flex: 1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
     padding-right: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-glow) rgba(255, 255, 255, 0.05);
 }
 
 .courses-list::-webkit-scrollbar {
