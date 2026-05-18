@@ -401,6 +401,36 @@ header {
     color: #ffb400;
 }
 
+/* Card Inline Alerts */
+.card-alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.card-inline-alert {
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    line-height: 1.3;
+}
+
+.card-alert-error {
+    background: rgba(255, 50, 80, 0.12);
+    border: 1px solid rgba(255, 50, 80, 0.3);
+    color: #ff8099;
+}
+
+.card-alert-warning {
+    background: rgba(255, 180, 0, 0.1);
+    border: 1px solid rgba(255, 180, 0, 0.3);
+    color: #ffd060;
+}
+
 /* Card conflict / warning highlights */
 .result-card.card-conflict::before {
     background: #ff4060;
