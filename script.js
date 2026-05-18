@@ -149,6 +149,7 @@ const displayResults = (results, conflictGroups, sameDayGroups, prereqConflicts)
             : '';
 
         card.innerHTML = `
+            <button class="remove-course-btn" aria-label="Remove Course" title="Remove course">✕</button>
             <div class="result-info">
                 <div class="course-code-badge">${item.code}</div>
                 <h3 class="course-title">${item.title}</h3>
@@ -160,6 +161,21 @@ const displayResults = (results, conflictGroups, sameDayGroups, prereqConflicts)
                 <div class="period">Slot ${item.period}</div>
             </div>
         `;
+
+        const removeBtn = card.querySelector('.remove-course-btn');
+        removeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const parts = inputField.value.split(',').map(p => p.trim()).filter(p => p.length > 0);
+            const nq = normalize(item.code);
+            const newParts = parts.filter(p => !normalize(p).includes(nq));
+            
+            if (newParts.length > 0) {
+                inputField.value = newParts.join(', ') + ', ';
+            } else {
+                inputField.value = '';
+            }
+            handleSearch();
+        });
 
         resultsContainer.appendChild(card);
     });

@@ -829,3 +829,21 @@ header {
         transform: translate(-50%, -50%) scale(1);
     }
 }
+
+.remove-course-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.remove-course-btn:hover {
+    color: var(--accent-glow-secondary);
+    transform: scale(1.2) rotate(90deg);
+}
