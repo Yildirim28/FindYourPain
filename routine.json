@@ -955,5 +955,883 @@
     "offeredin": [
       "BSDS"
     ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 3241",
+    "title": "Soil Mechanics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ENG 101",
+    "title": "English I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "DS 4491",
+    "title": "Machine Learning Systems Design",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 2203",
+    "title": "Numerical Analysis and Computer Programming",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 301",
+    "title": "Electrical Properties of Materials",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 305",
+    "title": "Power System",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 2171",
+    "title": "Fluid Mechanics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 3211",
+    "title": "Design of Steel Structures",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "SOC 101",
+    "title": "Society, Environment and Computing Ethics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 183",
+    "title": "Calculus and Linear Algebra",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 313",
+    "title": "Computer Architecture",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 2101",
+    "title": "Electronics I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4117",
+    "title": "Analog Integrated Circuits",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4217",
+    "title": "Power System Protection",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MAT 2109",
+    "title": "Coordinate Geometry and Vector Analysis",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MAT 1103",
+    "title": "Calculus II",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "SOC 3101",
+    "title": "Society, Environment and Engineering Ethics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 425",
+    "title": "Microprocessor, Microcontroller and Interfacing",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 207",
+    "title": "Electronics II",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "IPE 4101",
+    "title": "Industrial Production Engineering",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ACT 111",
+    "title": "Financial and Managerial Accounting",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 203",
+    "title": "Energy Conversion I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4121",
+    "title": "VLSI Design",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "PHY 1201",
+    "title": "Physics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 205",
+    "title": "Energy Conversion II",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MAT 1101",
+    "title": "Calculus I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 2101",
+    "title": "Engineering Materials",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 2271",
+    "title": "Engineering Hydrology",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 469",
+    "title": "Project Management",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 3403",
+    "title": "Microprocessor and Interfacing",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "PHY 1103",
+    "title": "Physics II",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 4213",
+    "title": "Introduction to Steel-Concrete Composite Structures",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 2401",
+    "title": "Structured Programming Language",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 313",
+    "title": "Solid State Devices",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 483",
+    "title": "Digital Image Processing",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 1003",
+    "title": "Electrical Circuits II",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 303",
+    "title": "Engineering Electromagnetics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CHE 2101",
+    "title": "Chemistry",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 401",
+    "title": "Control System",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 323",
+    "title": "Computer Networks",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSI 423",
+    "title": "Simulation & Modeling",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSDS"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 2105",
+    "title": "Digital Electronics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 1101",
+    "title": "Differential and Integral Calculus",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 2101",
+    "title": "Matrices and Vector Analysis",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 201",
+    "title": "Coordinate Geometry and Vector Analysis",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 1001",
+    "title": "Electrical Circuits I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 311",
+    "title": "Digital Signal Processing",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 3131",
+    "title": "Water Supply Engineering",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MATH 1201",
+    "title": "Linear Algebra, Ordinary and Partial Differential Equations",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 307",
+    "title": "Power Electronics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MAT 2105",
+    "title": "Linear Algebra and Differential Equations",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 3113",
+    "title": "Design of Concrete Structures",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ECO 2101",
+    "title": "Economics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4315",
+    "title": "Digital Communication",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ECO 213",
+    "title": "Economics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 309",
+    "title": "Communication Theory",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4211",
+    "title": "Transmission and Distribution System",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "MAT 2107",
+    "title": "Complex Variables, Fourier and Laplace Transforms",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 113",
+    "title": "Electrical Circuits",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 123",
+    "title": "Electronics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 255",
+    "title": "Probability and Random Signal Analysis",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "PHY 1101",
+    "title": "Physics I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 1201",
+    "title": "Surveying",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 1101",
+    "title": "Engineering Mechanics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 2111",
+    "title": "Mechanics of Solids I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CSE 4891",
+    "title": "Data Mining",
+    "type": "Mid-Term",
+    "prerequisite": [
+      "Artificial Intelligence"
+    ],
+    "offeredin": [
+      "BSCSE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 211",
+    "title": "Signals and Linear System",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "EEE 4523",
+    "title": "Internet of Things - I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 4151",
+    "title": "Highway Design and Railway Engineering",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "ACT 3101",
+    "title": "Financial and Managerial Accounting",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSEEE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 3111",
+    "title": "Structural Analysis and Design I",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "CE 3251",
+    "title": "Transportation Planning and Traffic Engineering",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCE"
+    ]
+  },
+  {
+    "day": 1,
+    "period": "T1",
+    "time": "09:00 AM - 11:00 AM",
+    "code": "PHY 105",
+    "title": "Physics",
+    "type": "Mid-Term",
+    "prerequisite": [],
+    "offeredin": [
+      "BSCSE"
+    ]
   }
 ]
