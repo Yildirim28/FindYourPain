@@ -26,8 +26,12 @@ const switchMode = (mode) => {
     // Update placeholder
     if (mode === 'spring26') {
         inputField.placeholder = inputField.getAttribute('data-placeholder-spring26');
+        // Auto-display all Spring26 exams
+        displaySpring26Results(spring26Data);
     } else {
         inputField.placeholder = inputField.getAttribute('data-placeholder-routine');
+        // Clear results for routine mode
+        resultsContainer.innerHTML = '';
     }
 };
 
