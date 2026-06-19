@@ -145,17 +145,45 @@ const handleSearch = () => {
     suggestionsBox.classList.add('hidden');
 };
 
+// Parse student ID ranges from room string
+// Room format: "309 (011202103-0112231028)" or "309 (011202103-0112231028)   322 (0112330839-0152430102)"
+const parseRoomIdRanges = (roomStr) => {
+    const ranges = [];
+    const regex = /\((\d+)\s*-\s*(\d+)\)/g;
+    let match;
+    while ((match = regex.exec(roomStr)) !== null) {
+        ranges.push({ start: match[1], end: match[2] });
+    }
+    return ranges;
+};
+
+// Check if a student ID falls within any ID range in the room string
+const isIdInRoom = (studentId, roomStr) => {
+    const ranges = parseRoomIdRanges(roomStr);
+    return ranges.some(r => studentId >= r.start && studentId <= r.end);
+};
+
 // Spring26 search handler
 const handleSpring26Search = (query) => {
     const nq = normalize(query);
 
-    const matches = spring26Data.filter(item =>
-        normalize(item.courseCode).includes(nq) ||
-        normalize(item.courseName).includes(nq) ||
-        normalize(item.section).includes(nq) ||
-        normalize(item.room).includes(nq) ||
-        normalize(item.teacher).includes(nq)
-    );
+    // Check if query looks like a student ID (all digits)
+    const isStudentId = /^\d{5,12}$/.test(query.trim());
+
+    let matches;
+    if (isStudentId) {
+        // Student ID search: find all exams where this ID falls within a room's ID range
+        matches = spring26Data.filter(item => isIdInRoom(query.trim(), item.room));
+    } else {
+        // Normal search by course code, name, section, room, teacher
+        matches = spring26Data.filter(item =>
+            normalize(item.courseCode).includes(nq) ||
+            normalize(item.courseName).includes(nq) ||
+            normalize(item.section).includes(nq) ||
+            normalize(item.room).includes(nq) ||
+            normalize(item.teacher).includes(nq)
+        );
+    }
 
     // Deduplicate by id
     const uniqueResults = [...new Map(matches.map(item => [item.id, item])).values()];
@@ -166,7 +194,7 @@ const handleSpring26Search = (query) => {
         return a.courseCode.localeCompare(b.courseCode);
     });
 
-    displaySpring26Results(uniqueResults);
+    displaySpring26Results(uniqueResults, isStudentId ? query.trim() : null);
     suggestionsBox.classList.add('hidden');
 };
 
@@ -310,7 +338,7 @@ const displayResults = (results, conflictGroups, sameDayGroups, prereqConflicts)
 };
 
 // Spring26 display results
-const displaySpring26Results = (results) => {
+const displaySpring26Results = (results, studentId = null) => {
     resultsContainer.innerHTML = '';
 
     if (results.length === 0) {
@@ -328,7 +356,11 @@ const displaySpring26Results = (results) => {
     // Show summary banner
     const summaryDiv = document.createElement('div');
     summaryDiv.className = 'alert alert-info';
-    summaryDiv.innerHTML = `<span class="alert-icon">📅</span><div><strong>${results.length} Exam${results.length !== 1 ? 's' : ''} Found</strong> across ${Object.keys(dateGroups).length} day${Object.keys(dateGroups).length !== 1 ? 's' : ''}</div>`;
+    if (studentId) {
+        summaryDiv.innerHTML = `<span class="alert-icon">🎓</span><div><strong>ID: ${studentId}</strong> — ${results.length} Exam${results.length !== 1 ? 's' : ''} across ${Object.keys(dateGroups).length} day${Object.keys(dateGroups).length !== 1 ? 's' : ''}</div>`;
+    } else {
+        summaryDiv.innerHTML = `<span class="alert-icon">📅</span><div><strong>${results.length} Exam${results.length !== 1 ? 's' : ''} Found</strong> across ${Object.keys(dateGroups).length} day${Object.keys(dateGroups).length !== 1 ? 's' : ''}</div>`;
+    }
     resultsContainer.appendChild(summaryDiv);
 
     results.forEach((item, index) => {
