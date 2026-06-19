@@ -78,6 +78,37 @@ const handleSearch = () => {
         return a.period.localeCompare(b.period);
     });
 
+    // If no results in routine, check Spring26 for a match
+    if (uniqueResults.length === 0) {
+        const spring26Matches = [];
+        parts.forEach(part => {
+            const nq = normalize(part);
+            const matches = spring26Data.filter(item =>
+                normalize(item.courseCode).includes(nq) ||
+                normalize(item.courseName).includes(nq)
+            );
+            spring26Matches.push(...matches);
+        });
+
+        if (spring26Matches.length > 0) {
+            resultsContainer.innerHTML = `<div class="alert alert-info">
+                <span class="alert-icon">🔍</span>
+                <div><strong>Not found in Exam Routine</strong> — This course was found in the <strong>Spring 26</strong> exam schedule.
+                <br><button class="glass-btn" id="switch-to-spring26" style="margin-top:0.5rem;padding:0.4rem 1rem;font-size:0.85rem;cursor:pointer;">Switch to Spring 26 →</button></div>
+            </div>`;
+            document.getElementById('switch-to-spring26').addEventListener('click', () => {
+                switchMode('spring26');
+                inputField.value = query;
+                handleSpring26Search(query);
+            });
+            return;
+        }
+
+        resultsContainer.innerHTML = '<div class="no-results">No courses found. Try switching to Spring 26 mode — this course may be in the exam schedule.</div>';
+        suggestionsBox.classList.add('hidden');
+        return;
+    }
+
     // --- Conflict detection ---
 
     // 1. Timeslot conflict: same day AND same period
