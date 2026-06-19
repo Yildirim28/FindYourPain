@@ -6,6 +6,7 @@
     --accent-glow-secondary: #ff007f;
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
+    --accent-glow-tertiary: #6a00ff;
 }
 
 * {
@@ -714,8 +715,13 @@ header {
     }
 
     .top-nav-buttons .glass-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .mode-toggle {
+        padding: 0.5rem 0.8rem !important;
+        font-size: 0.75rem !important;
     }
     
     .glitch {
@@ -932,6 +938,103 @@ header {
 .course-cell-title {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mode Toggle Buttons */
+.mode-toggle {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.mode-toggle.active {
+    background: rgba(0, 255, 204, 0.15);
+    border-color: rgba(0, 255, 204, 0.5);
+    color: var(--accent-glow);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
+}
+
+.mode-toggle.active[data-mode="spring26"] {
+    background: rgba(106, 0, 255, 0.15);
+    border-color: rgba(106, 0, 255, 0.5);
+    color: var(--accent-glow-tertiary);
+    box-shadow: 0 0 15px rgba(106, 0, 255, 0.2);
+}
+
+/* Spring26 Result Cards */
+.spring26-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.spring26-card::before {
+    background: var(--accent-glow-tertiary);
+    box-shadow: 0 0 10px var(--accent-glow-tertiary);
+}
+
+.spring26-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.spring26-id-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+}
+
+.spring26-meta {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+}
+
+.spring26-meta span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+}
+
+.spring26-dept {
+    color: var(--accent-glow-tertiary) !important;
+    border-color: rgba(106, 0, 255, 0.3) !important;
+    background: rgba(106, 0, 255, 0.1) !important;
+}
+
+.spring26-date {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-glow-tertiary);
+}
+
+.spring26-room {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    max-width: 280px;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* Alert Info */
+.alert-info {
+    background: rgba(106, 0, 255, 0.1);
+    border: 1px solid rgba(106, 0, 255, 0.35);
+    color: #b388ff;
+}
+
+.alert-info strong {
+    color: var(--accent-glow-tertiary);
 }
 
 /* Download Button Styles */

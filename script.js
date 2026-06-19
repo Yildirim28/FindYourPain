@@ -1,16 +1,48 @@
 import routineData from './routine.json' with { type: 'json' };
+import spring26Data from './spring26-routine.json' with { type: 'json' };
 
 const inputField = document.getElementById('course-input');
 const searchBtn = document.getElementById('search-btn');
 const resultsContainer = document.getElementById('results-container');
 const suggestionsBox = document.getElementById('search-suggestions');
+const modeToggleBtn = document.getElementById('mode-toggle-btn');
+const modeToggleBtnSpring = document.getElementById('mode-toggle-btn-spring');
+
+let currentMode = 'routine'; // 'routine' or 'spring26'
 
 const normalize = (str) => str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+// Mode toggle logic
+const switchMode = (mode) => {
+    currentMode = mode;
+    inputField.value = '';
+    resultsContainer.innerHTML = '';
+    suggestionsBox.classList.add('hidden');
+
+    // Update active button styles
+    modeToggleBtn.classList.toggle('active', mode === 'routine');
+    modeToggleBtnSpring.classList.toggle('active', mode === 'spring26');
+
+    // Update placeholder
+    if (mode === 'spring26') {
+        inputField.placeholder = inputField.getAttribute('data-placeholder-spring26');
+    } else {
+        inputField.placeholder = inputField.getAttribute('data-placeholder-routine');
+    }
+};
+
+modeToggleBtn.addEventListener('click', () => switchMode('routine'));
+modeToggleBtnSpring.addEventListener('click', () => switchMode('spring26'));
 
 const handleSearch = () => {
     const query = inputField.value.trim();
     if (!query) {
         resultsContainer.innerHTML = '<div class="no-results">Please enter at least one course code or title to search.</div>';
+        return;
+    }
+
+    if (currentMode === 'spring26') {
+        handleSpring26Search(query);
         return;
     }
 
@@ -75,6 +107,31 @@ const handleSearch = () => {
     });
 
     displayResults(uniqueResults, conflictGroups, sameDayGroups, prereqConflicts);
+    suggestionsBox.classList.add('hidden');
+};
+
+// Spring26 search handler
+const handleSpring26Search = (query) => {
+    const nq = normalize(query);
+
+    const matches = spring26Data.filter(item =>
+        normalize(item.courseCode).includes(nq) ||
+        normalize(item.courseName).includes(nq) ||
+        normalize(item.section).includes(nq) ||
+        normalize(item.room).includes(nq) ||
+        normalize(item.teacher).includes(nq)
+    );
+
+    // Deduplicate by id
+    const uniqueResults = [...new Map(matches.map(item => [item.id, item])).values()];
+
+    uniqueResults.sort((a, b) => {
+        if (a.examDate !== b.examDate) return a.examDate.localeCompare(b.examDate);
+        if (a.examTime !== b.examTime) return a.examTime.localeCompare(b.examTime);
+        return a.courseCode.localeCompare(b.courseCode);
+    });
+
+    displaySpring26Results(uniqueResults);
     suggestionsBox.classList.add('hidden');
 };
 
@@ -217,6 +274,72 @@ const displayResults = (results, conflictGroups, sameDayGroups, prereqConflicts)
     }
 };
 
+// Spring26 display results
+const displaySpring26Results = (results) => {
+    resultsContainer.innerHTML = '';
+
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<div class="no-results">No exams found for the given search.</div>';
+        return;
+    }
+
+    // Group by exam date for summary
+    const dateGroups = {};
+    results.forEach(item => {
+        if (!dateGroups[item.examDate]) dateGroups[item.examDate] = [];
+        dateGroups[item.examDate].push(item);
+    });
+
+    // Show summary banner
+    const summaryDiv = document.createElement('div');
+    summaryDiv.className = 'alert alert-info';
+    summaryDiv.innerHTML = `<span class="alert-icon">📅</span><div><strong>${results.length} Exam${results.length !== 1 ? 's' : ''} Found</strong> across ${Object.keys(dateGroups).length} day${Object.keys(dateGroups).length !== 1 ? 's' : ''}</div>`;
+    resultsContainer.appendChild(summaryDiv);
+
+    results.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'result-card glass-panel spring26-card';
+        card.style.animationDelay = `${index * 0.05}s`;
+
+        card.innerHTML = `
+            <div class="result-info">
+                <div class="spring26-card-header">
+                    <div class="course-code-badge">${item.courseCode}</div>
+                    <span class="spring26-id-badge">#${item.id}</span>
+                </div>
+                <h3 class="course-title">${item.courseName}</h3>
+                <div class="spring26-meta">
+                    <span class="spring26-section">Section: ${item.section}</span>
+                    <span class="spring26-teacher">Teacher: ${item.teacher}</span>
+                    <span class="spring26-dept">${item.dept}</span>
+                </div>
+            </div>
+            <div class="time-info">
+                <div class="spring26-date">${item.examDate}</div>
+                <div class="time-slot">${item.examTime}</div>
+                <div class="spring26-room">${item.room}</div>
+            </div>
+        `;
+
+        resultsContainer.appendChild(card);
+    });
+
+    // Download button for Spring26
+    if (results.length > 0) {
+        const btnContainer = document.createElement('div');
+        btnContainer.className = 'download-btn-container';
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'glass-btn download-routine-btn';
+        downloadBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Spring 26 Schedule (PNG)
+        `;
+        downloadBtn.addEventListener('click', () => generateSpring26Image(results));
+        btnContainer.appendChild(downloadBtn);
+        resultsContainer.appendChild(btnContainer);
+    }
+};
+
 searchBtn.addEventListener('click', handleSearch);
 
 inputField.addEventListener('keypress', (e) => {
@@ -235,29 +358,61 @@ inputField.addEventListener('input', () => {
     }
 
     const nq = normalize(lastPart);
-    const matches = routineData
-        .filter(item => normalize(item.code).includes(nq) || normalize(item.title).includes(nq))
-        .slice(0, 6);
 
-    if (matches.length === 0) {
-        suggestionsBox.classList.add('hidden');
-        return;
-    }
+    if (currentMode === 'spring26') {
+        // Spring26 autocomplete: search by course code, name, section
+        const matches = spring26Data
+            .filter(item =>
+                normalize(item.courseCode).includes(nq) ||
+                normalize(item.courseName).includes(nq) ||
+                normalize(item.section).includes(nq)
+            )
+            .slice(0, 6);
 
-    suggestionsBox.innerHTML = '';
-    matches.forEach(match => {
-        const div = document.createElement('div');
-        div.className = 'suggestion-item';
-        div.innerHTML = `<span class="suggestion-code">${match.code}</span><span class="suggestion-title">${match.title}</span>`;
-        div.addEventListener('click', () => {
-            parts[parts.length - 1] = ' ' + match.code;
-            inputField.value = parts.join(',').trim() + ', ';
-            inputField.focus();
+        if (matches.length === 0) {
             suggestionsBox.classList.add('hidden');
+            return;
+        }
+
+        suggestionsBox.innerHTML = '';
+        matches.forEach(match => {
+            const div = document.createElement('div');
+            div.className = 'suggestion-item';
+            div.innerHTML = `<span class="suggestion-code">${match.courseCode}</span><span class="suggestion-title">${match.courseName} (${match.section})</span>`;
+            div.addEventListener('click', () => {
+                inputField.value = match.courseCode;
+                inputField.focus();
+                suggestionsBox.classList.add('hidden');
+                handleSearch();
+            });
+            suggestionsBox.appendChild(div);
         });
-        suggestionsBox.appendChild(div);
-    });
-    suggestionsBox.classList.remove('hidden');
+        suggestionsBox.classList.remove('hidden');
+    } else {
+        const matches = routineData
+            .filter(item => normalize(item.code).includes(nq) || normalize(item.title).includes(nq))
+            .slice(0, 6);
+
+        if (matches.length === 0) {
+            suggestionsBox.classList.add('hidden');
+            return;
+        }
+
+        suggestionsBox.innerHTML = '';
+        matches.forEach(match => {
+            const div = document.createElement('div');
+            div.className = 'suggestion-item';
+            div.innerHTML = `<span class="suggestion-code">${match.code}</span><span class="suggestion-title">${match.title}</span>`;
+            div.addEventListener('click', () => {
+                parts[parts.length - 1] = ' ' + match.code;
+                inputField.value = parts.join(',').trim() + ', ';
+                inputField.focus();
+                suggestionsBox.classList.add('hidden');
+            });
+            suggestionsBox.appendChild(div);
+        });
+        suggestionsBox.classList.remove('hidden');
+    }
 });
 
 // Modal Logic
@@ -286,39 +441,67 @@ window.addEventListener('click', (event) => {
 const renderAllCourses = () => {
     allCoursesList.innerHTML = '';
 
-    const uniqueMap = new Map();
-    routineData.forEach(item => {
-        if (!uniqueMap.has(item.code)) {
-            uniqueMap.set(item.code, item);
-        }
-    });
-
-    const sorted = Array.from(uniqueMap.values()).sort((a, b) => a.code.localeCompare(b.code));
-
-    sorted.forEach((item, index) => {
-        const courseEl = document.createElement('div');
-        courseEl.className = 'course-list-item';
-        courseEl.innerHTML = `<span class="course-code-badge">${item.code}</span> <span class="course-list-title">${item.title}</span>`;
-        courseEl.style.animationDelay = `${(index % 10) * 0.05}s`;
-        courseEl.style.cursor = 'pointer';
-
-        courseEl.addEventListener('click', () => {
-            const currentValue = inputField.value.trim();
-            if (currentValue) {
-                const parts = currentValue.split(',').map(p => p.trim()).filter(p => p.length > 0);
-                if (!parts.includes(item.code)) {
-                    parts.push(item.code);
-                    inputField.value = parts.join(', ') + ', ';
-                }
-            } else {
-                inputField.value = item.code + ', ';
+    if (currentMode === 'spring26') {
+        // Spring26: show unique course codes with their names
+        const uniqueMap = new Map();
+        spring26Data.forEach(item => {
+            if (!uniqueMap.has(item.courseCode)) {
+                uniqueMap.set(item.courseCode, item);
             }
-            handleSearch();
-            modal.classList.add('hidden');
         });
 
-        allCoursesList.appendChild(courseEl);
-    });
+        const sorted = Array.from(uniqueMap.values()).sort((a, b) => a.courseCode.localeCompare(b.courseCode));
+
+        sorted.forEach((item, index) => {
+            const courseEl = document.createElement('div');
+            courseEl.className = 'course-list-item';
+            courseEl.innerHTML = `<span class="course-code-badge">${item.courseCode}</span> <span class="course-list-title">${item.courseName}</span>`;
+            courseEl.style.animationDelay = `${(index % 10) * 0.05}s`;
+            courseEl.style.cursor = 'pointer';
+
+            courseEl.addEventListener('click', () => {
+                inputField.value = item.courseCode;
+                handleSearch();
+                modal.classList.add('hidden');
+            });
+
+            allCoursesList.appendChild(courseEl);
+        });
+    } else {
+        const uniqueMap = new Map();
+        routineData.forEach(item => {
+            if (!uniqueMap.has(item.code)) {
+                uniqueMap.set(item.code, item);
+            }
+        });
+
+        const sorted = Array.from(uniqueMap.values()).sort((a, b) => a.code.localeCompare(b.code));
+
+        sorted.forEach((item, index) => {
+            const courseEl = document.createElement('div');
+            courseEl.className = 'course-list-item';
+            courseEl.innerHTML = `<span class="course-code-badge">${item.code}</span> <span class="course-list-title">${item.title}</span>`;
+            courseEl.style.animationDelay = `${(index % 10) * 0.05}s`;
+            courseEl.style.cursor = 'pointer';
+
+            courseEl.addEventListener('click', () => {
+                const currentValue = inputField.value.trim();
+                if (currentValue) {
+                    const parts = currentValue.split(',').map(p => p.trim()).filter(p => p.length > 0);
+                    if (!parts.includes(item.code)) {
+                        parts.push(item.code);
+                        inputField.value = parts.join(', ') + ', ';
+                    }
+                } else {
+                    inputField.value = item.code + ', ';
+                }
+                handleSearch();
+                modal.classList.add('hidden');
+            });
+
+            allCoursesList.appendChild(courseEl);
+        });
+    }
 };
 
 // Contact Modal Logic
@@ -358,6 +541,78 @@ if (refreshBtn) {
         setTimeout(() => wave.remove(), 1400);
     });
 }
+
+// Spring26 Image Export Logic
+const generateSpring26Image = async (results) => {
+    const exportContainer = document.getElementById('export-container');
+    exportContainer.innerHTML = '';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'routine-table-wrapper';
+    
+    const title = document.createElement('h2');
+    title.className = 'routine-export-title';
+    title.textContent = 'SPRING 2026 EXAM SCHEDULE';
+    wrapper.appendChild(title);
+
+    const table = document.createElement('table');
+    table.className = 'routine-table';
+
+    // Header
+    const thead = document.createElement('thead');
+    thead.innerHTML = '<tr><th>#</th><th>Course Code</th><th>Course Name</th><th>Section</th><th>Exam Date</th><th>Exam Time</th><th>Room</th></tr>';
+    table.appendChild(thead);
+
+    // Body
+    const tbody = document.createElement('tbody');
+    results.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${item.id}</td>
+            <td><strong>${item.courseCode}</strong></td>
+            <td>${item.courseName}</td>
+            <td>${item.section}</td>
+            <td>${item.examDate}</td>
+            <td>${item.examTime}</td>
+            <td>${item.room}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    wrapper.appendChild(table);
+
+    // Signature
+    const signature = document.createElement('div');
+    signature.style.marginTop = '1.5rem';
+    signature.style.textAlign = 'center';
+    signature.style.fontSize = '0.85rem';
+    signature.style.color = 'rgba(255, 255, 255, 0.6)';
+    signature.style.letterSpacing = '1px';
+    signature.innerHTML = '<strong>Find Your Pain</strong>, created by Yildirim';
+    wrapper.appendChild(signature);
+
+    exportContainer.appendChild(wrapper);
+
+    if (typeof html2canvas !== 'undefined') {
+        try {
+            const canvas = await html2canvas(wrapper, { backgroundColor: null, scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'spring26_exam_schedule.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (err) {
+            console.error('Error generating image:', err);
+            alert('Failed to generate image. Please try again.');
+        }
+    } else {
+        alert('html2canvas library is not loaded.');
+    }
+    
+    exportContainer.innerHTML = '';
+};
 
 // Routine Image Export Logic
 const generateRoutineImage = async (results) => {

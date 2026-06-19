@@ -21,6 +21,8 @@
     <nav class="top-nav">
         <div class="top-left-title">UIU Tentative Exam Routine</div>
         <div class="top-nav-buttons">
+            <button id="mode-toggle-btn" class="glass-btn mode-toggle active" data-mode="routine">Exam Routine</button>
+            <button id="mode-toggle-btn-spring" class="glass-btn mode-toggle" data-mode="spring26">Spring 26</button>
             <button id="refresh-btn" class="glass-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" class="refresh-icon">
@@ -49,7 +51,7 @@
         <div class="search-container">
             <div class="search-box glass-panel">
                 <input type="text" id="course-input" placeholder="Enter Course Codes (e.g. CSE 313, CSE 4509)"
-                    autocomplete="off">
+                    autocomplete="off" data-placeholder-routine="Enter Course Codes (e.g. CSE 313, CSE 4509)" data-placeholder-spring26="Search by Course Code, Name, Section, or Room (e.g. CSE 4509, Operating System)">
                 <button id="search-btn">
                     <span>Locate</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
